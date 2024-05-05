@@ -31,7 +31,7 @@ Les fonctionnalités attendues pour la première version du projet sont les suiv
 - Génération de **devis/facture**
 - Gestion de **documents rattachés à la commande** avec **fusion de fichiers PDF**
 - Automatisation du processus de livraison auprès de **FedEx**
-- Gestion du paiement via **Stripe** (virement/prélèvement bancaire)
+- Gestion du paiement via **Stripe** (virement/prélèvement bancaire) & **Paypal**
 - Système de **notifications**
 - Système d'**emailing**
 - Système d'**authentification** avec définition de **rôles** (employé/administrateur)
