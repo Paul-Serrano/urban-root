@@ -62,3 +62,11 @@ Tant que ces documents ne sont pas fournis, la commande est en état de pause.
 - Administrateur : employé de Service Vin
 - Exportateur : employé de l'entreprise qui exporte ses produits
 - Documentaliste : ajout de documents *cola* et *prior notice*
+
+## Technologies
+
+- Back-End : Laravel, pour un développement rapide et sécurisé
+- Front-End : Blade, fournit avec Laravel + Bootstrap, pour le design rapide et accessible & Unpoly, si besoin de réactivité
+- SGBD : Adminer, pensé pour fonctionner avec PostgreSql
+- BDD : PostgreSql, pour gérer efficacement les données structurées propre aux transactions commerciales
+- APIs : FedEx, pour le transport
