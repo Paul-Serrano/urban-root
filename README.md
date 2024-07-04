@@ -82,3 +82,23 @@ S'agissant d'une plateforme commerciale, **la sécurité et la maintenabilité**
 - **Versioning** : *Git*, conjoint à l'approche *TBD* pour une flexibilité optimale
 - **Déploiement** : *Docker* + *Github Actions*, dans une stratégie de déploiement automatisé rapide et efficace
 - **Serveur web**: *Nginx*, pour les performances et la gestion des connexions simultanées
+
+## Installation du projet
+
+### Prérequis
+
+- *Composer*
+- *Docker*
+- *Docker-compose*
+- *Git*
+
+### Installation
+
+1. Cloner le projet
+2. Installer les dépendances avec `composer install`
+3. Créer le fichier `.env` à partir du fichier `.env.example`
+4. Générer la clé d'application avec `php artisan key:generate`
+5. Se rendre dans le dossier `docker` puis `development` et lancer `docker-compose up -d`
+6. Se rendre sur `localhost:8080` pour accéder à *Adminer*
+7. Notre base de données de développement s'appelle `mydb` et est accessible avec les identifiants `root` et `root`
+8. L'application est accessible sur `localhost:8000`
