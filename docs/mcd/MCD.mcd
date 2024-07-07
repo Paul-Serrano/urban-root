@@ -1,0 +1,19 @@
+CUSTOMER: name, siret, tva_reference, fda_number, eori_reference, fedex_account_reference, tiers_code, default_order_category
+LIVES IN, 11 ADDRESS, 11 CUSTOMER
+ADDRESS: alias, address1, address2, city, zipcode, country
+DETERMINES LOCATION OF, 0N EMPLOYEE, 1N ADDRESS
+
+WORKS FOR, 11 CUSTOMER, 0N EMPLOYEE
+EMPLOYEE: email, firstname, lastname, password, role, civility, job, language_iso_code, phone_portable_number, phone_fix_number
+IS ATTACHED TO, 01 NOTE, 11 EMPLOYEE
+NOTE: content
+
+IS ASSIGNED BY, 11 EMPLOYEE, 0N ORDER
+REFUND: reason, price_ht, price_ttc
+IS TRIGGERED BY, 11 ORDER, 0N REFUND
+
+PRODUCT: reference, description, price_ht, price_ttc
+IS COMPOSED OF, 1N PRODUCT, 0N ORDER
+ORDER: reference, category, valid, paid, shipped, cancelled, total_ht, total_ttc
+IS CREATED BY, 11 USER, 0N ORDER
+USER: email, pseudo, password, role
