@@ -1,19 +1,36 @@
-CUSTOMER: name, siret, tva_reference, fda_number, eori_reference, fedex_account_reference, tiers_code, default_order_category
-LIVES IN, 11 ADDRESS, 11 CUSTOMER
-ADDRESS: alias, address1, address2, city, zipcode, country
-DETERMINES LOCATION OF, 0N EMPLOYEE, 1N ADDRESS
+PRIOR_NOTICE:
+IS FOLLOWED BY, 01 PRIOR_NOTICE, 11 ORDER
+CAN FOLLOW, 11 ORDER, 0N CLAIM
+CLAIM: reason, amount_ht, amount_ttc
+PRODUCT_TYPE: name, is_certification_needed
+IS DESCRIBED BY, 11 PRODUCT_TYPE, 0N PRODUCT
 
-WORKS FOR, 11 CUSTOMER, 0N EMPLOYEE
+PAYS, 1N ORDER, 1N TRANSACTION
+% ORDER shipping_type: priority ou eco
+ORDER: reference, type, shipping_type, shipping_amount_ht, shipping_amount_ttc, shipping_tax_amount, total_ht, total_ttc, is_valid, is_over, commentary, creation_date, update_date
+COMPOSES1, 11 ORDER, 1N PACKAGE
+% PACKAGE type: fret ou messagerie / reason: vente, échantillon, retour ou cadeau
+PACKAGE: quantity, type, shipping_type, reason, product_ht, product_ttc, product_tax_amount, weight, width, length, height, tracking_number, is_delivered, creation_date, update_date
+CONTAINS, 1N PRODUCT, 1N PACKAGE
+PRODUCT: type, primary_name, secondary_name, alcool_degree, price_ht, price_ttc, tax_amount, weight
+
+TRANSACTION: account_number, type, amount_ht, amount_ttc, date
+IS SENT BY, 11 SENDER, 0N ORDER
+IS RECEIVED BY, 11 RECEIVER, 0N ORDER
+RECEIVER: name, siret, tva_number, tiers_code
+IS CLASSIFIED BY, 11 COLA, 0N PRODUCT
+IS DEFINED BY, 11 PRODUCT_CAPACITY, 0N PRODUCT
+
+WORKS FOR, 01 SENDER, 0N EMPLOYEE
+SENDER: name, siret, tva_reference, fda_number, eori_reference, fedex_account_reference, tiers_code, default_order_category
+LIVES IN1, 11 ADDRESS, 11 SENDER
+LIVES IN2, 11 ADDRESS, 11 RECEIVER
+COLA:
+PRODUCT_CAPACITY: name, value
+
 EMPLOYEE: email, firstname, lastname, password, role, civility, job, language_iso_code, phone_portable_number, phone_fix_number
-IS ATTACHED TO, 01 NOTE, 11 EMPLOYEE
+IS ATTACHED TO, 11 EMPLOYEE, 01 NOTE
 NOTE: content
-
-IS ASSIGNED BY, 11 EMPLOYEE, 0N ORDER
-REFUND: reason, price_ht, price_ttc
-IS TRIGGERED BY, 11 ORDER, 0N REFUND
-
-PRODUCT: reference, description, price_ht, price_ttc
-IS COMPOSED OF, 1N PRODUCT, 0N ORDER
-ORDER: reference, category, valid, paid, shipped, cancelled, total_ht, total_ttc
-IS CREATED BY, 11 USER, 0N ORDER
-USER: email, pseudo, password, role
+ADDRESS: address1, address2, city, zip_code, type, is_default
+RESIDES IN, 11 COUNTRY, 0N ADDRESS
+COUNTRY: iso_code, name
