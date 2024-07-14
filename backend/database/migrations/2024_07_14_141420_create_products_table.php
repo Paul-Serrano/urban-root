@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_type_id')->constrained();
             $table->string('primary_name');
             $table->string('secondary_name');
             $table->double('alcohol_percentage');
