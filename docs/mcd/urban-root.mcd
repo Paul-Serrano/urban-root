@@ -1,0 +1,29 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                           DIAGRAMME RELATIONNEL (1)                            %
+%                                                                                %
+%  Cochez « Diagramme relationnel en Mocodo », rafraîchissez la figure et allez  %
+%  sous l'onglet Autres sorties. Vous y trouvez un texte-source que vous pouvez  %
+%  copier-coller (⧉) ici pour voir apparaître un autre type de schéma.           %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Roles: name
+Category: name, description
+Describe, 1N Forums, 1N Category
+:
+
+Define, 1N Users, 11 Roles
+Create, 1N Forums, 11 Users
+Forums: title
+Answer, 11 Forums, 1N Forum_Posts
+
+Participates, NN Events, NN Users
+Users: mail, pass, firstname, lastname, address
+Post, 1N Forum_Posts, 11 Users
+Forum_Posts: content
+
+Events: title, description, date, location
+Plan, 1N Events, 11 Users
+Register, 1N Gardens, 11 Users
+Gardens: name, latitude, longitude, description, img_path
