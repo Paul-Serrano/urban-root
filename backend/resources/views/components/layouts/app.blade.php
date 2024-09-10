@@ -32,7 +32,6 @@
 
             {{-- MENU --}}
             <x-menu activate-by-route>
-
                 {{-- User --}}
                 @if($user = auth()->user())
                     <x-menu-separator />
@@ -46,11 +45,10 @@
                     <x-menu-separator />
                 @endif
 
-                <x-menu-item title="Hello" icon="o-sparkles" link="/" />
-                <x-menu-sub title="Settings" icon="o-cog-6-tooth">
-                    <x-menu-item title="Wifi" icon="o-wifi" link="####" />
-                    <x-menu-item title="Archives" icon="o-archive-box" link="####" />
-                </x-menu-sub>
+                <x-menu-item title="Naviguer" icon="o-sparkles" link="{{ route('home') }}" />
+                <x-menu-item title="Forum" icon="o-sparkles" link="{{ route('forum') }}" />
+                <x-menu-item title="Vos Jardins" icon="o-sparkles" link=" {{ route('gardens') }}" />
+                <x-menu-item title="Vos Events" icon="o-sparkles" link=" {{ route('events') }}" />
             </x-menu>
         </x-slot:sidebar>
 

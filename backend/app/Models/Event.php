@@ -10,10 +10,17 @@ class Event extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
+        'address_id',
         'title',
         'description',
         'date',
         'latitude',
-        'longitude'
+        'longitude',
     ];
+
+    public function address()
+    {
+        return $this->belongsTo(Address::class);
+    }
 }

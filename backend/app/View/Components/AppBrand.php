@@ -25,11 +25,8 @@ class AppBrand extends Component
                 <a href="/" wire:navigate>
                     <!-- Hidden when collapsed -->
                     <div {{ $attributes->class(["hidden-when-collapsed"]) }}>
-                        <div class="flex items-center gap-2">
-                            <x-icon name="o-square-3-stack-3d" class="w-6 -mb-1 text-purple-500" />
-                            <span class="font-bold text-3xl me-3 bg-gradient-to-r from-purple-500 to-pink-300 bg-clip-text text-transparent ">
-                                app
-                            </span>
+                        <div class="flex items-center gap-2 justify-center">
+                            <img class="w-[150px]" src="{{ Storage::url('images/logo.png') }}" alt="Image">
                         </div>
                     </div>
 

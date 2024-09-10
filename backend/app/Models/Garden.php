@@ -11,15 +11,20 @@ class Garden extends Model
 
     protected $fillable = [
         'user_id',
+        'address_id',
         'name',
         'description',
         'latitude',
         'longitude',
-        'img_path'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function address()
+    {
+        return $this->belongsTo(Address::class);
     }
 }

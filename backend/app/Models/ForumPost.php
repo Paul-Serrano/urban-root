@@ -9,6 +9,8 @@ class ForumPost extends Model
 {
     use HasFactory;
 
+    protected $table = "forums_posts";
+
     protected $fillable = [
         'user_id',
         'forum_id',
