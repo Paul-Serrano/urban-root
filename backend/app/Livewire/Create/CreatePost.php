@@ -58,6 +58,7 @@ class CreatePost extends Component
 
         session()->flash('message', 'Post créé avec succès.');
 
+        header('Location: /forum');
         exit();
 
         // Réinitialiser les champs du formulaire après la soumission

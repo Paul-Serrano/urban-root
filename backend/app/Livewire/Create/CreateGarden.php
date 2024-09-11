@@ -124,7 +124,11 @@ class CreateGarden extends Component
     {
 
         $response = Http::get('https://nominatim.openstreetmap.org/search', [
-            'q' => "{$this->streetNumber} {$this->streetName}, {$this->city}, {$this->country} {$this->postalCode}",
+            // 'q' => "{$this->streetNumber} {$this->streetName}, {$this->city}, {$this->country} {$this->postalCode}",
+            'street' => "{$this->streetNumber} {$this->streetName}",
+            'city' => $this->city,
+            'country' => $this->country,
+            'postalcode' => $this->postalCode,
             'format' => 'json',
             'limit' => 1
         ]);

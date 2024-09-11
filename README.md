@@ -1,7 +1,8 @@
 ### Démarrage du projet : 
 
 - cd docker/development && docker compose down && docker compose up -d
-- cd ../../backend && php artisan migrate
+- cd ../../backend && composer require
+- php artisan migrate
 - npm run dev
 - ouvrez un nouveau terminal
 - cd backend && php artisan serve
